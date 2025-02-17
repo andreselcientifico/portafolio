@@ -160,17 +160,19 @@ export default function HomePage() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-6">
-                  <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
-                  <p className="text-gray-400 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="px-3 py-1 bg-gray-700 rounded-full text-sm">
-                        {tag}
-                      </span>
-                    ))}
+                <Link href={`/projects/${project.title.toLowerCase()}`} className="block">
+                  <div className="p-6">
+                    <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
+                    <p className="text-gray-400 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map(tag => (
+                        <span key={tag} className="px-3 py-1 bg-gray-700 rounded-full text-sm">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                </Link>
               </motion.div>
             ))}
           </div>
