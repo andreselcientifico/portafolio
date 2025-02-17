@@ -63,8 +63,8 @@ if (count.count === 0) {
 }
 
 export function getProjects(): Project[] {
-  const projects = db.prepare("SELECT * FROM projects").all();
-  return projects.map(project => ({
+  const projects = db.prepare("SELECT * FROM projects").all() as any[];
+  return projects.map((project: any) => ({
     ...project,
     tags: JSON.parse(project.tags as string)
   }));

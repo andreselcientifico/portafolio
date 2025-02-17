@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageToggle } from "@/components/language-toggle";
-import { getProjects } from "@/lib/db";
+import { getProjects, type Project } from "@/lib/db";
 import * as SimpleIcons from 'simple-icons';
 
 export default function HomePage() {
