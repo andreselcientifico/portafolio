@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageToggle } from "@/components/language-toggle";
 import { getProjects, type Project } from "@/lib/db";
-import * as SimpleIcons from 'simple-icons';
+import { Code, FileCode, Globe2, Cpu, Javascript, Hash, Cog, Rocket, Binary, Terminal } from "lucide-react";
 
 export default function HomePage() {
   const [language, setLanguage] = useState("es");
@@ -21,16 +21,16 @@ export default function HomePage() {
   }, []);
 
   const skills = [
-    { name: "Python", icon: "SiPython" },
-    { name: "Django", icon: "SiDjango" },
-    { name: "React", icon: "SiReact" },
-    { name: "HTML/CSS", icon: "SiHtml5" },
-    { name: "JavaScript", icon: "SiJavascript" },
-    { name: "C#", icon: "SiCsharp" },
-    { name: "Rust", icon: "SiRust" },
-    { name: "Mojo", icon: "SiMozilla" },
-    { name: "C++", icon: "SiCplusplus" },
-    { name: "C", icon: "SiC" },
+    { name: "Python", Icon: Code },
+    { name: "Django", Icon: Globe2 },
+    { name: "React", Icon: FileCode },
+    { name: "HTML/CSS", Icon: FileCode },
+    { name: "JavaScript", Icon: Javascript },
+    { name: "C#", Icon: Hash },
+    { name: "Rust", Icon: Cog },
+    { name: "Mojo", Icon: Rocket },
+    { name: "C++", Icon: Binary },
+    { name: "C", Icon: Terminal },
   ];
 
   const defaultProjects = [
@@ -135,22 +135,18 @@ export default function HomePage() {
             {language === "es" ? "Habilidades Técnicas" : "Technical Skills"}
           </h3>
           <div className="grid grid-cols-5 gap-4">
-            {skills.map((skill, index) => {
-              // @ts-ignore - SimpleIcons types are not accurate
-              const IconComponent = SimpleIcons[skill.icon];
-              return (
-                <motion.div
-                  key={skill.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="p-4 bg-gray-800 rounded-lg flex flex-col items-center gap-2 hover:bg-gray-700 transition-colors"
-                >
-                  <IconComponent className="w-8 h-8" />
-                  <span className="font-medium text-sm">{skill.name}</span>
-                </motion.div>
-              );
-            })}
+            {skills.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="p-4 bg-gray-800 rounded-lg flex flex-col items-center gap-2 hover:bg-gray-700 transition-colors"
+              >
+                <skill.Icon className="w-8 h-8" />
+                <span className="font-medium text-sm">{skill.name}</span>
+              </motion.div>
+            ))}
           </div>
         </section>
 
