@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import { motion } from "framer-motion";
 import { Github, Mail, Linkedin, Code2, Database, Brain, Gamepad2, Phone, Monitor } from "lucide-react";
 import Image from "next/image";

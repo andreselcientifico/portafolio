@@ -41,9 +41,12 @@ const defaultProjects: Project[] = [
 ];
 
 export function getProjects(): Project[] {
-  if (typeof window === 'undefined') return defaultProjects;
+  if (typeof window === 'undefined' || !window.localStorage) {
+    return defaultProjects;
+  }
   
-  const stored = localStorage.getItem('projects');
+  try {
+    const stored = localStorage.getItem('projects');
   if (!stored) {
     localStorage.setItem('projects', JSON.stringify(defaultProjects));
     return defaultProjects;

@@ -1,8 +1,8 @@
 import React from "react";
 import "@/styles/globals.css";
-import { ThemeProvider } from "next-themes";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import ClientThemeProvider from "@/components/client-theme-provider";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -15,9 +15,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <ClientThemeProvider>
         <body>{children}</body>
-      </ThemeProvider>
+      </ClientThemeProvider>
     </html>
   );
 }
