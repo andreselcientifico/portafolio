@@ -47,10 +47,14 @@ export function getProjects(): Project[] {
   
   try {
     const stored = localStorage.getItem('projects');
-  if (!stored) {
-    localStorage.setItem('projects', JSON.stringify(defaultProjects));
+    if (!stored) {
+      localStorage.setItem('projects', JSON.stringify(defaultProjects));
+      return defaultProjects;
+    }
+    
+    return JSON.parse(stored);
+  } catch (error) {
+    console.error('Error accessing localStorage:', error);
     return defaultProjects;
   }
-  
-  return JSON.parse(stored);
 }
