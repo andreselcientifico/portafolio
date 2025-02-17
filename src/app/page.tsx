@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Github, Mail, Linkedin, Code2, Database, Brain, Gamepad2, Phone, Monitor } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomePage() {
   const skills = [
