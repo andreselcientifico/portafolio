@@ -14,10 +14,10 @@ import * as SimpleIcons from 'simple-icons';
 
 export default function HomePage() {
   const [language, setLanguage] = useState("es");
-  const [projects, setProjects] = useState([]);
+  const [dbProjects, setDbProjects] = useState<Project[]>([]);
 
   useEffect(() => {
-    setProjects(getProjects());
+    setDbProjects(getProjects());
   }, []);
 
   const skills = [
@@ -33,7 +33,7 @@ export default function HomePage() {
     { name: "C", icon: "SiC" },
   ];
 
-  const projects = [
+  const defaultProjects = [
     {
       title: "AUIS",
       description: "Pastelería especializada en deliciosos pasteles rellenos",
@@ -136,6 +136,7 @@ export default function HomePage() {
           </h3>
           <div className="grid grid-cols-5 gap-4">
             {skills.map((skill, index) => {
+              // @ts-ignore - SimpleIcons types are not accurate
               const IconComponent = SimpleIcons[skill.icon];
               return (
                 <motion.div
@@ -157,7 +158,7 @@ export default function HomePage() {
         <section>
           <h3 className="text-3xl font-bold mb-8">Featured Projects</h3>
           <div className="grid grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+            {(dbProjects.length > 0 ? dbProjects : defaultProjects).map((project, index) => (
               <motion.div
                 key={project.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -178,7 +179,7 @@ export default function HomePage() {
                     <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
                     <p className="text-gray-400 mb-4">{project.description}</p>
                     <div className="flex flex-wrap gap-2">
-                      {project.tags.map(tag => (
+                      {project.tags.map((tag: string) => (
                         <span key={tag} className="px-3 py-1 bg-gray-700 rounded-full text-sm">
                           {tag}
                         </span>

@@ -2,6 +2,16 @@
 
 import Database from "better-sqlite3";
 
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  description_en: string;
+  image: string;
+  tags: string[];
+  url: string;
+}
+
 const db = new Database("portfolio.db");
 
 db.exec(`
@@ -52,6 +62,10 @@ if (count.count === 0) {
   );
 }
 
-export function getProjects() {
-  return db.prepare("SELECT * FROM projects").all();
+export function getProjects(): Project[] {
+  const projects = db.prepare("SELECT * FROM projects").all();
+  return projects.map(project => ({
+    ...project,
+    tags: JSON.parse(project.tags as string)
+  }));
 }
