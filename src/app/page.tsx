@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageToggle } from "@/components/language-toggle";
 import { getProjects, type Project } from "@/lib/db";
-import { Code, FileCode, Globe2, Cpu, Javascript, Hash, Cog, Rocket, Binary, Terminal } from "lucide-react";
+import { Code, FileCode, Globe2, Cpu, FileJson, Hash, Cog, Rocket, Binary, Terminal } from "lucide-react";
 
 export default function HomePage() {
   const [language, setLanguage] = useState("es");
@@ -25,7 +25,7 @@ export default function HomePage() {
     { name: "Django", Icon: Globe2 },
     { name: "React", Icon: FileCode },
     { name: "HTML/CSS", Icon: FileCode },
-    { name: "JavaScript", Icon: Javascript },
+    { name: "JavaScript", Icon: FileJson },
     { name: "C#", Icon: Hash },
     { name: "Rust", Icon: Cog },
     { name: "Mojo", Icon: Rocket },
