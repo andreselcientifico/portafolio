@@ -1,7 +1,7 @@
 "use client";
 
 import Database from "better-sqlite3";
-import type { Database as DatabaseType } from "better-sqlite3";
+import type { Database as DB } from "better-sqlite3";
 
 export interface Project {
   id: number;
@@ -13,7 +13,7 @@ export interface Project {
   url: string;
 }
 
-const db: DatabaseType = new Database("portfolio.db");
+const db: DB = new Database("portfolio.db");
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS projects (

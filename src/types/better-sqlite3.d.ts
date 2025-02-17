@@ -1,5 +1,5 @@
 declare module 'better-sqlite3' {
-  interface Database {
+  export interface Database {
     exec(sql: string): void;
     prepare<T = any>(sql: string): Statement<T>;
   }
