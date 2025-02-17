@@ -14,10 +14,10 @@ import * as SimpleIcons from 'simple-icons';
 
 export default function HomePage() {
   const [language, setLanguage] = useState("es");
-  const [dbProjects, setDbProjects] = useState<Project[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
-    setDbProjects(getProjects());
+    setProjects(getProjects());
   }, []);
 
   const skills = [
@@ -158,7 +158,7 @@ export default function HomePage() {
         <section>
           <h3 className="text-3xl font-bold mb-8">Featured Projects</h3>
           <div className="grid grid-cols-3 gap-8">
-            {(dbProjects.length > 0 ? dbProjects : defaultProjects).map((project, index) => (
+            {projects.map((project, index) => (
               <motion.div
                 key={project.title}
                 initial={{ opacity: 0, y: 20 }}
