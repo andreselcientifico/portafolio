@@ -1,22 +1,36 @@
 "use client";
 
+"use client";
+
 import { motion } from "framer-motion";
 import { Github, Mail, Linkedin, Code2, Database, Brain, Gamepad2, Phone, Monitor } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { LanguageToggle } from "@/components/language-toggle";
+import { getProjects } from "@/lib/db";
+import * as SimpleIcons from 'simple-icons';
 
 export default function HomePage() {
+  const [language, setLanguage] = useState("es");
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    setProjects(getProjects());
+  }, []);
+
   const skills = [
-    { name: "Python", level: 95 },
-    { name: "Django", level: 90 },
-    { name: "React", level: 85 },
-    { name: "HTML/CSS", level: 90 },
-    { name: "JavaScript", level: 85 },
-    { name: "C#", level: 80 },
-    { name: "Rust", level: 75 },
-    { name: "Mojo", level: 70 },
-    { name: "C++", level: 60 },
-    { name: "C", level: 60 },
+    { name: "Python", icon: "SiPython" },
+    { name: "Django", icon: "SiDjango" },
+    { name: "React", icon: "SiReact" },
+    { name: "HTML/CSS", icon: "SiHtml5" },
+    { name: "JavaScript", icon: "SiJavascript" },
+    { name: "C#", icon: "SiCsharp" },
+    { name: "Rust", icon: "SiRust" },
+    { name: "Mojo", icon: "SiMozilla" },
+    { name: "C++", icon: "SiCplusplus" },
+    { name: "C", icon: "SiC" },
   ];
 
   const projects = [
@@ -53,7 +67,9 @@ export default function HomePage() {
           <div className="flex-1">
             <h1 className="text-5xl font-bold mb-4">Andrés Alfonso Pérez Rodríguez</h1>
             <h2 className="text-2xl text-gray-400 mb-6">Full Stack Developer & AI Specialist</h2>
-            <div className="flex gap-4">
+            <div className="flex items-center gap-4">
+              <ThemeToggle />
+              <LanguageToggle language={language} setLanguage={setLanguage} />
               <a href="https://github.com/andreselcientifico" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Github size={24} />
               </a>
@@ -115,29 +131,25 @@ export default function HomePage() {
 
         {/* Skills Section */}
         <section className="mb-20">
-          <h3 className="text-3xl font-bold mb-8">Technical Skills</h3>
-          <div className="grid grid-cols-2 gap-8">
-            {skills.map((skill, index) => (
-              <div key={skill.name} className="mb-4">
-                <div className="flex justify-between mb-2">
-                  <span className="font-semibold">{skill.name}</span>
-                  <span>{skill.level}%</span>
-                </div>
-                <motion.div 
-                  className="h-2 bg-gray-700 rounded-full"
-                  initial={{ width: 0 }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
+          <h3 className="text-3xl font-bold mb-8">
+            {language === "es" ? "Habilidades Técnicas" : "Technical Skills"}
+          </h3>
+          <div className="grid grid-cols-5 gap-4">
+            {skills.map((skill, index) => {
+              const IconComponent = SimpleIcons[skill.icon];
+              return (
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="p-4 bg-gray-800 rounded-lg flex flex-col items-center gap-2 hover:bg-gray-700 transition-colors"
                 >
-                  <motion.div 
-                    className="h-full bg-blue-500 rounded-full"
-                    initial={{ width: 0 }}
-                    animate={{ width: `${skill.level}%` }}
-                    transition={{ duration: 0.8, delay: index * 0.1 }}
-                  />
+                  <IconComponent className="w-8 h-8" />
+                  <span className="font-medium text-sm">{skill.name}</span>
                 </motion.div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
