@@ -7,15 +7,28 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageToggle } from "@/components/language-toggle";
-import { getProjects, type Project } from "@/lib/db";
+import { getProjectsFromDB , type Project } from "@/lib/db";
 import { Code, FileCode, Globe2, Cpu, FileJson, Hash, Cog, Rocket, Binary, Terminal } from "lucide-react";
+
+export const runtime = 'edge';
 
 export default function HomePage() {
   const [language, setLanguage] = useState("es");
   const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
-    setProjects(getProjects());
+    async function fetchProjects() {
+      try {
+        const res = await fetch("/api/projects");
+        if (!res.ok) throw new Error("Failed to fetch projects");
+        const data = await res.json();
+        setProjects(data);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      }
+    }
+
+    fetchProjects();
   }, []);
 
   const skills = [
@@ -66,22 +79,22 @@ export default function HomePage() {
             <h1 className="text-5xl font-bold mb-4">Andrés Alfonso Pérez Rodríguez</h1>
             <h2 className="text-2xl text-gray-400 mb-6">Full Stack Developer & AI Specialist</h2>
             <div className="flex items-center gap-4">
-              <ThemeToggle />
+              <ThemeToggle  />
               <LanguageToggle language={language} setLanguage={setLanguage} />
               <a href="https://github.com/andreselcientifico" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Github size={24} />
               </a>
-              <a href="mailto:contact@andresperez.dev" className="text-gray-400 hover:text-white transition-colors">
+              <a href="mailto:andreselcientifico@gmail.com" className="text-gray-400 hover:text-white transition-colors">
                 <Mail size={24} />
               </a>
-              <a href="https://linkedin.com/in/andresperez" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="www.linkedin.com/in/andres-alfonso-569409128" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin size={24} />
               </a>
             </div>
           </div>
           <div className="relative w-64 h-64">
             <Image
-              src="/profile.jpg"
+              src="/perfil.jpg"
               alt="Andrés Pérez"
               width={256}
               height={256}

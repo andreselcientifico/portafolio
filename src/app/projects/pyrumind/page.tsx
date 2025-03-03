@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
+export const runtime = 'edge';
+
 export default function PyrumindProjectPage() {
   return (
     <motion.main 
@@ -84,7 +86,7 @@ export default function PyrumindProjectPage() {
 
           <div className="mt-12 pt-8 border-t border-gray-800">
             <a 
-              href="https://pyrumind.com" 
+              href="#" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
