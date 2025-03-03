@@ -18,7 +18,6 @@
     "test:types": "tsc --noEmit --pretty",
     "test:all": "pnpm run test && pnpm run test:types",
     "install": "bun install",
-    "install-pnpm": "pnpm install",
     "pages:build": "npx @cloudflare/next-on-pages"
   },
   "dependencies": {
