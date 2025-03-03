@@ -17,9 +17,7 @@
     "test": "jest",
     "test:types": "tsc --noEmit --pretty",
     "test:all": "pnpm run test && pnpm run test:types",
-    "preinstall": "rm -f bun.lockb",
     "install": "bun install",
-    "preinstall-pnpm": "rm -f pnpm-lock.yaml",
     "install-pnpm": "pnpm install",
     "pages:build": "npx @cloudflare/next-on-pages"
   },
