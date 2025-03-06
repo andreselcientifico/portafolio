@@ -1,0 +1,60 @@
+---
+const props = Astro.props
+---
+
+<main id="specialization" class="bg-gray-900 text-white min-h-screen p-8 flex flex-col items-center">
+    <div class="w-full max-w-5xl">
+        <h2 class="text-3xl font-bold mb-6">Áreas de especialización</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" {...props}>
+                    <path fill="#028ee9" d="m.586 12l4.95-4.95L6.95 8.464L3.414 12l3.536 3.536l-1.414 1.414zm8.201 8.728l4.486-17.94l1.94.485l-4.485 17.94zm8.263-5.192L20.586 12L17.05 8.464l1.415-1.414l4.95 4.95l-4.95 4.95z" />
+                </svg>
+                <h3 class="text-xl font-semibold mt-2">Desarrollo web</h3>
+                <p class="text-gray-400">Especializado en Django, FastApi, React, Astro, Tailwind, entre otras tecnologias para la web</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" {...props}>
+                    <g fill="none" stroke="#00f310" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                        <path d="M12 5a3 3 0 1 0-5.997.125a4 4 0 0 0-2.526 5.77a4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
+                        <path d="M12 5a3 3 0 1 1 5.997.125a4 4 0 0 1 2.526 5.77a4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />
+                        <path d="M15 13a4.5 4.5 0 0 1-3-4a4.5 4.5 0 0 1-3 4m8.599-6.5a3 3 0 0 0 .399-1.375m-11.995 0A3 3 0 0 0 6.401 6.5m-2.924 4.396a4 4 0 0 1 .585-.396m15.876 0a4 4 0 0 1 .585.396M6 18a4 4 0 0 1-1.967-.516m15.934 0A4 4 0 0 1 18 18" />
+                    </g>
+                </svg>
+                <h3 class="text-xl font-semibold mt-2">Aprendizaje automático</h3>
+                <p class="text-gray-400">Experiencia en modelos de IA, interpolación y segmentación.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" {...props}>
+                    <path fill="none" stroke="#e860ed" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20h3m3 0h-3m0 0v-3m0 0h7a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2z" />
+                </svg>
+                <h3 class="text-xl font-semibold mt-2">Aplicaciones de escritorio</h3>
+                <p class="text-gray-400">Aplicaciones de escritorio multiplataforma con marcos modernos</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" {...props}>
+                    <path fill="#e0a50c" d="M3 4h17a2 2 0 0 1 2 2v2h-4V6H5v12h9v2H3a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2m14 6h6a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V11a1 1 0 0 1 1-1m1 2v7h4v-7z" />
+                </svg>
+                <h3 class="text-xl font-semibold mt-2">Desarrollo móvil</h3>
+                <p class="text-gray-400">Aplicaciones Android con soluciones nativas y multiplataforma</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" {...props}>
+                    <g fill="none">
+                        <path stroke="#e94302" stroke-linecap="round" stroke-width="1.5" d="m10.165 4.78l.502.354a2.31 2.31 0 0 0 2.666 0l.502-.355A4.24 4.24 0 0 1 16.285 4h.612c.405 0 .813.025 1.194.16c2.383.846 4.021 3.935 3.903 10.943c-.024 1.412-.354 2.972-1.628 3.581a3.2 3.2 0 0 1-1.393.316a2.74 2.74 0 0 1-1.53-.437c-.915-.599-1.584-1.6-2.554-2.102a4.1 4.1 0 0 0-1.89-.461H11c-.658 0-1.306.158-1.89.46c-.97.504-1.64 1.504-2.553 2.103a2.74 2.74 0 0 1-1.53.437a3.2 3.2 0 0 1-1.393-.316c-1.274-.609-1.604-2.17-1.628-3.581C1.887 8.095 3.526 5.006 5.909 4.16C6.29 4.025 6.7 4 7.103 4h.612c.878 0 1.734.272 2.45.78ZM7.5 9v3M6 10.5h3" />
+                        <path fill="#e94302" d="M19 10.25a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0m-3 0a.75.75 0 1 1-1.5 0a.75.75 0 0 1 1.5 0M16.75 8a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5m0 3a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5" />
+                    </g>
+                </svg>
+                <h3 class="text-xl font-semibold mt-2">Desarrollo de juegos</h3>
+                <p class="text-gray-400">Experiencia en desarrollo de juegos con varios motores y marcos.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" {...props}>
+                    <path fill="#e9de02" d="M8 16.5a1 1 0 1 0 1 1a1 1 0 0 0-1-1M12 2C8 2 4 3.37 4 6v12c0 2.63 4 4 8 4s8-1.37 8-4V6c0-2.63-4-4-8-4m6 16c0 .71-2.28 2-6 2s-6-1.29-6-2v-3.27A13.16 13.16 0 0 0 12 16a13.16 13.16 0 0 0 6-1.27Zm0-6c0 .71-2.28 2-6 2s-6-1.29-6-2V8.73A13.16 13.16 0 0 0 12 10a13.16 13.16 0 0 0 6-1.27Zm-6-4C8.28 8 6 6.71 6 6s2.28-2 6-2s6 1.29 6 2s-2.28 2-6 2m-4 2.5a1 1 0 1 0 1 1a1 1 0 0 0-1-1" />
+                </svg>
+                <h3 class="text-xl font-semibold mt-2">Diseño de base de datos</h3>
+                <p class="text-gray-400">Desarrollo de arquitectura y optimización de bases de datos</p>
+            </div>
+        </div>
+    </div>
+</main>
