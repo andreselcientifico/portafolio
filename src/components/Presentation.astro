@@ -5,8 +5,8 @@ import perfil_img from '@/assets/perfil.webp'
 const props = Astro.props
 ---
 
-<div class="flex items-center justify-center text-white min-h-screen p-8">
-  <div class="flex items-center gap-18">
+<div class="flex items-center justify-center text-white min-h-screen p-8 ">
+  <div class="flex items-center gap-18 flex-col lg:flex-row">
     <div class="text-left">
       <h1 class="text-4xl font-bold">Andrés Alfonso Pérez Rodríguez</h1>
       <p class="text-xl text-gray-400">
@@ -14,7 +14,7 @@ const props = Astro.props
       </p>
       <div class="flex items-center gap-4 mt-4">
         <a
-          href="https://github.com"
+          href="https://github.com/andreselcientifico"
           target="_blank"
           class="text-gray-400 text-2xl"
         >
@@ -39,7 +39,7 @@ const props = Astro.props
             </g>
           </svg>
         </a>
-        <a href="mailto:correo@example.com" class="text-gray-400 text-2xl">
+        <a href="mailto:andreselcientifico@gmail.com" class="text-gray-400 text-2xl">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -54,7 +54,7 @@ const props = Astro.props
           </svg>
         </a>
         <a
-          href="https://linkedin.com"
+          href="www.linkedin.com/in/andres-alfonso-569409128"
           target="_blank"
           class="text-gray-400 text-2xl"
         >
@@ -79,7 +79,7 @@ const props = Astro.props
         widths={[240, 540, 720, perfil_img.width]}
         sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${perfil_img.width}px`}
         alt="Foto de perfil de Andrés Alfonso Pérez Rodríguez"
-        class="w-64 h-64 rounded-full border-2 border-gray-700"
+        class="w-64 h-74 rounded-full border-2 border-gray-700"
       />
     </div>
   </div>
