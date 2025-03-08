@@ -11,116 +11,140 @@ import interpolador2_img from "@/assets/interpolador2.webp";
 const props = Astro.props;
 ---
 
+<!-- Sección de Proyectos: Muestra distintas tarjetas con información sobre cada proyecto -->
 <section
     id="projects"
     class="bg-gray-900 text-white min-h-screen p-8 flex flex-col items-center"
 >
-    <div
-        class="grid grid-cols-1 sm:grid-cols-2 w-full max-w-5xl justify-items-center gap-4"
-    >
+    <!-- Contenedor de tarjetas en formato grid responsive -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 w-full max-w-5xl justify-items-center gap-4">
+        
+        <!-- Tarjeta del proyecto "Pyrumind" -->
         <div class="card bg-base-100 w-full h-full shadow-sm flex flex-col">
+            <!-- Imagen representativa del proyecto -->
             <Image
                 src={pyrumind_img}
-                alt="pyrumind"
+                alt="Pyrumind"
                 class="w-full h-40 object-cover rounded-t-lg"
             />
+            <!-- Cuerpo de la tarjeta con título, descripción y tecnologías utilizadas -->
             <div class="card-body flex flex-col justify-between text-start">
                 <h2 class="card-title text-center">Pyrumind</h2>
                 <p class="text-gray-400">
-                    Pyrumid es una página web de documentos donde puedes
-                    escribir libros, leerlos y traducirlos.
+                    Pyrumind es una plataforma web para crear, leer y traducir libros, facilitando el acceso a una amplia gama de documentos.
                 </p>
                 <p>
-                    Conocimientos: HTML, CSS, JavaScript, Tailwind, Astro,
-                    Django
+                    Conocimientos: HTML, CSS, JavaScript, Tailwind, Astro, Django
                 </p>
             </div>
         </div>
+        
+        <!-- Tarjeta del proyecto "Avis" -->
         <div class="card bg-base-100 w-full h-full shadow-sm flex flex-col">
+            <!-- Imagen representativa del proyecto -->
             <Image
                 src={avis_img}
-                alt="avis"
+                alt="Avis"
                 class="w-full h-40 object-cover rounded-t-lg"
             />
+            <!-- Cuerpo de la tarjeta con título, descripción y tecnologías utilizadas -->
             <div class="card-body flex flex-col justify-between text-start">
                 <h2 class="card-title text-center">Avis</h2>
                 <p class="text-gray-400">
-                    Avis es una página web de una pastelería.
+                    Avis es el sitio web de una pastelería, donde se destacan diseños atractivos y deliciosas propuestas.
                 </p>
-                <p>Conocimientos: HTML, CSS, JavaScript, Django</p>
+                <p>
+                    Conocimientos: HTML, CSS, JavaScript, Django
+                </p>
             </div>
         </div>
+        
+        <!-- Tarjeta del proyecto "Nomas" -->
         <div class="card bg-base-100 w-full h-full shadow-sm flex flex-col">
+            <!-- Imagen representativa del proyecto -->
             <Image
                 src={nomas_img}
-                alt="nomas"
+                alt="Nomas"
                 class="w-full h-40 object-cover rounded-t-lg"
             />
+            <!-- Cuerpo de la tarjeta con título, descripción y tecnologías utilizadas -->
             <div class="card-body flex flex-col justify-between text-start">
                 <h2 class="card-title text-center">Nomas</h2>
                 <p class="text-gray-400">
-                    Nomas es una página web de noticias.
+                    Nomas es un portal de noticias que te mantiene informado con contenido actualizado y de calidad.
                 </p>
-                <p>Conocimientos: HTML, CSS, JavaScript, Astro, Tailwind</p>
+                <p>
+                    Conocimientos: HTML, CSS, JavaScript, Astro, Tailwind
+                </p>
             </div>
         </div>
+        
+        <!-- Tarjeta del proyecto "Interpolador de Frame" -->
         <div class="card bg-base-100 w-full h-full shadow-sm flex flex-col">
+            <!-- Carrusel de imágenes para mostrar diferentes vistas del proyecto -->
             <div class="carousel w-full h-40 rounded-t-lg overflow-hidden">
                 <div id="item1" class="carousel-item w-full">
                     <Image
                         src={interpolador_img}
-                        alt="interpolador"
+                        alt="Interpolador de Frame - vista 1"
                         class="w-full h-40 object-cover"
                     />
                 </div>
                 <div id="item2" class="carousel-item w-full">
                     <Image
                         src={interpolador1_img}
-                        alt="interpolador1"
+                        alt="Interpolador de Frame - vista 2"
                         class="w-full h-40 object-cover"
                     />
                 </div>
                 <div id="item3" class="carousel-item w-full">
                     <Image
                         src={interpolador2_img}
-                        alt="interpolador2"
+                        alt="Interpolador de Frame - vista 3"
                         class="w-full h-40 object-cover"
                     />
                 </div>
             </div>
+            <!-- Cuerpo de la tarjeta con controles del carrusel, título, descripción y tecnologías utilizadas -->
             <div class="card-body flex flex-col justify-between text-start">
+                <!-- Controles para navegar entre las imágenes del carrusel -->
                 <div class="flex w-full justify-center gap-2">
                     <a href="#item1" class="btn btn-xs">1</a>
                     <a href="#item2" class="btn btn-xs">2</a>
                     <a href="#item3" class="btn btn-xs">3</a>
                 </div>
-                <h2 class="card-title text-center">Interpolador de frame</h2>
+                <h2 class="card-title text-center">Interpolador de Frame</h2>
                 <p class="text-gray-400">
-                    Interpolador de frame es un proyecto personal creado para
-                    mejorar la fluidez de las cámaras de video.
+                    Interpolador de Frame es un proyecto personal diseñado para optimizar la fluidez en la captura de video, mejorando la transición entre fotogramas.
                 </p>
-                <p>Conocimientos: Python, OpenCV</p>
+                <p>
+                    Conocimientos: Python, OpenCV
+                </p>
             </div>
         </div>
+        
+        <!-- Tarjeta para proyectos en construcción o privados -->
         <div class="card bg-base-100 w-full h-full shadow-sm flex flex-col">
+            <!-- Imagen representativa que indica "en construcción" -->
             <Image
                 src={image_art_img}
-                alt="en construccion"
+                alt="Proyectos en construcción"
                 class="w-full h-40 object-cover rounded-t-lg"
             />
+            <!-- Cuerpo de la tarjeta con título, descripción y enlace al perfil de GitHub -->
             <div class="card-body flex flex-col justify-between text-start">
                 <h2 class="card-title text-center">
-                    En construcción - proyectos privados y más
+                    En construcción - Proyectos privados y más
                 </h2>
                 <p class="text-gray-400">
-                    Estoy desarrollando muchos proyectos, tanto privados como
-                    públicos. Los puedes encontrar en mi GitHub.
+                    Actualmente, desarrollo una serie de proyectos innovadores, tanto privados como públicos. Puedes descubrir más en mi perfil de GitHub.
                 </p>
+                <!-- Enlace al perfil de GitHub -->
                 <a
                     href="https://github.com/andreselcientifico"
                     target="_blank"
                     class="text-2xl"
-                    aria-label="GitHub Profile"
+                    aria-label="Perfil de GitHub"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -144,5 +168,7 @@ const props = Astro.props;
                 </a>
             </div>
         </div>
+        
     </div>
 </section>
+
