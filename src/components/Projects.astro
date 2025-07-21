@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import pyrumind_img from "@/assets/pyrumind_1.webp";
+import polo_img from "@/assets/polo-verduras.webp";
 import image_art_img from "@/assets/image-art.webp";
 import avis_img from "@/assets/avis.webp";
 import nomas_img from "@/assets/nomas.webp";
@@ -123,7 +124,36 @@ const props = Astro.props;
             </div>
         </div>
         
-        <!-- Tarjeta para proyectos en construcción o privados -->
+        <!-- Tarjeta para jhon polo verduras -->
+        <div class="card bg-base-100 w-full h-full shadow-sm flex flex-col">
+            <!-- Imagen representativa que indica la pagina -->
+            <Image
+                src={polo_img}
+                alt="Proyectos en construcción"
+                class="w-full h-40 object-cover rounded-t-lg"
+            />
+            <!-- Cuerpo de la tarjeta con título, descripción y enlace al perfil de GitHub -->
+            <div class="card-body flex flex-col justify-between text-start">
+                <h2 class="card-title text-center">
+                    Jhon polo verduras
+                </h2>
+                <p class="text-gray-400">
+                    Jhon polo verduras es una pagina web que contiene informacion sobre el mercado local de verduras.
+                </p>
+                <!-- Enlace al pagina polo -->
+                <a
+                    href="https://jhon-polo.pages.dev/"
+                    target="_blank"
+                    class="text-2xl"
+                    aria-label="pagina jhon polo"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
+                        <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAJjUlEQVR4nNWaeXRU1R3HP+/NmsxMJgvZSMAkJCSBkASDhYhglFNBCQKRHFTcKFIterQtpy6l1lMFpVSpUqVFZZGKlWMFNehxQRQ5iIAS1hgSIAsJEyaErLNl5s3rH5EhkzdJJtGCfv9733t/936/9913f/feGQGAvAizSq2ZIYgsEiAXCOGnCYcMB2UvqyWPu4Rvm1sF8iLMGq16GQgLAP3lVhgknCCvdXd6lqhVas0M4OckHkAPwgKVWvO1KAg8wM9L/AXoBZFFakEg53IrEUWR+KhYhsUmEG4yo1Fr8EgebA47jc3nqG2ow+a0K+IEyFUTxAcrCALxUbFkJKURPyQOvVaHW3LT2tFOnfUM31VVYA/QQX8wG8KYVXATc28oYkRCEqH6EDRqDaIgIssyHsmDq7OTdnsHuw7uYcO2Nzlw/DBer/dCEyGCJj9GDtR4hCmcjKQ0ZhcUMmPSVFISkhAEIaAQt8fNztKveGXLBj7dtxObw9bnYESHR1F4zTQeueshUhKuCNqw2+PmnR0lPPXa36iy1CBJEgoDxlAD0ydO5bYbipiUOwGTwRR0BzaHndfe28gfVj0ZsFytUlGQN4lH73qIyWOv7nVA+sOJulMsWb2Ukl0f+xsIM5hY+psl3D51DmEDEN4dne5ORszO4+x5q6JsQtY4Nj39CokxQ33i66xn2LF/FwcrDnPaWo/D5cIUYiAlIYkpv7iWa3ImoNVoFG3VWc9Q/Nh8fwMPFi9k5e+WAuB0OWmzd9Bua6fqTA0HK45yqr6a5rYWdFodE7LGMS1/CsNiE1CpVH6NpxXlUdNQ58eZjWa+XvcxKQlJNLe3cKjyKKveeoVP936OW/Kg1Whxu914Zd/8RhREJuaM5/nfLiV3ZJbCxL5jB/wNzLr2Jm6efCPnWs5TWXuS8ppKyqsraGxpCjjaE7LGUbLyP5iNYT5O8kpEThmBw+Xwqzt57NUsW/Qnjpwoo2TXR+zY/yUudycAk3LzmV0wnec3vUx9o0XRT+qwFP67fAOjktMVZX4GVKKIXqen092J2+MJKLo77p5+K2v++HdEQfRx9Y0WkmfmKurqtXrCTWG02dqxOy+ay8++is3PrCM2IprJ901n79FvA/Z129RbeP3J1Qpe3f1B8nqxOYJbDgVB4M7pt/qJB6ioORGwvrPTSUOT048bGh3H6keeIy4yBgBZDrggAvBNWSmtHW1+bxtA7KV+v0gblkJ+1lUKvqzqeFDxapWaedOKSU1MAcAjSX0OnkeS6LArl+dBG5gzZSYatVrBHzn5XVDx0RFR3HLdDHRaLQAt7S04O1291hcFAU2A1WhQBnQaHYWTpip4r9fL0RNlQbUxIWscY9Ozfc+Wc2dxupy91jeGGokwhSv4QRkYnZJOwpA4BW9tbuRc6/mg2lg0Z4FfIjttrcfeY+Xqjslj8wO+8UEZyE3PJjzAaNQ21AW1J8pMGsnEnPF+XI2lDnsv34BWo+W+ovkKvqzqOEpL/UCn0ZKTOpoQnXIHXm05HdQqNveGItSqi117JA/VlhpfXugOk8HIXxY+xsjhI/z4DoeNx19+euAGwoxhZKVmKnhZlqmxnFYksJ4whIQydcJ1CjEn66p9z6IoEhcVQ05aFsVTZjHn+hl+9V3uTl59dyNflu4euAGzwcTo5AwF73K7qLbU4pGkPuMzk0YydEi8vwG7jZN1VYxITOb+ovnkZeYwdEgc4SYz4UYzoug/09/e/i7LX38Bm8M+cAOjUjKINEcoeJvDTtWZ2n7jx6SOUiSjto52qs7Ucv8t9/BA8QK/6XUBbo8Hy7kG1mzdwHNvvORLegM2cO2VVwfkuwzU9BmrUWsYlZyu+H7Kqo5jd9p5fdtb6NRackeOYUhEFBq1GofTiaXpLIdPHGP73p0cO1Xul7EHbGBi9viAfEt7K6d77EB7whRqIP2KNMU5oPT4YQCaWs+z4t+rMIYa0Wm0CIKI5JVwupzYnPaAW40BGQjR6clKHRWwrPT4ETo9bt+zAAyPH8ZDc+/jjQ83U1pxBEOIgRGJSYrY2m7GJa+X1o62oDUNKA9kjchEq1amc4A9R/ddbFQQuTIjh01PreGewtt8S6DZYCIxZqgittUWvOCeGNAbyElTHiouYM/h/QCoRBULbr6D389bRFL8cBpbmjhtPQPAFfHDCdEp7xAGMuI9MSADeRm5AfnWjjba7O0UT5nJY3c/zJjU0UDX8fKdHe/79viBpk9XfPtAZPghaAOCIJCRlBawTPJKvP3serLTsnxTrKm1mTVb1rNi4yokb1duiIuKDRjfamsdqG4fgjYQZjARHTEkYFlkWASRYRdzQ73VwuIXn+CD3Z/g6rZFNoUaA8a3/b/fgEatITMpHWOIodc6HslDQ5OVd7/4gGXrn6eptVlZKcAtiiRJdPRxj9Qf+jQwxBzJ+KxxTBqbT8GVE4mJVL4Bj+ThYMVRPtz9Ce/v+ohjJ8t9U6YnAp2oGs5b+zxK9oeABuKiYrh35p3MLigkMXYo4UZzr5dQhyuPsXDZw5TXVCL1sw/qmakdTgcrNq4apPQu+AyE6kNJHZbMr2fdzbwbizHoQ/sNlmWZb8sPcaq+ul/xAFs+30ZizFBC9SFUW2rZvm9nr5cAQRtQiSryMnOYX3g7swqmE2WO9Kvg9ripqD1JTEQ00RFRfmU2h53dh/bi6OMo2B3nWpr485pnf5DgnlDPmzaHJxc+SkJ0vN+2tan1PG9/9h6bP92K0+Vk3RP/UBhoaLLy2f4vf1RBA4X61SUv+ua3zWnnQPkh1r73Bls+L/HdEozLzCUlIUkRvPWLbQHvQC8l1N0/zqdeXcG6kk2K1D73l7PRaXV+XEOTlX++s+6SiOwLfpu5j/Z8phCfmpjMr2bc4cfJsszyDS9Q9/0e53LCz8ALi58lO2004UYzofoQhscl8q/HV2IyXMygXtnLx1/vYPP2rZdcbCAIladPyamJyUDXyFqazvJNWSnN7S2MSs5gbPoYvyPeocpjLPrrYr4pK2Xw6efHgzDx3hvlNY+vZHSK8qDeE18c2M2i5Ys5WV/9g7LnjwlBkx8jx0bGcH/RfIquLyTcaEav1SGKIl7Zi6vThbX5HOvff5N1JZv6vTa51BA0+TEOvv+dOMxgIm1YCjGR0YTo9LjcnVjPN1JeXUm7veMySw0Ip6DOj/lKgPzLrWQwkGGPKHtZDfR+r/3ThUv2slqUPO4SZHktPy8TLmR5reRxl3Sl4Yt/t3lQgGx+2n+3OSx7eenC323+BxO9pDFpBlF0AAAAAElFTkSuQmCC" height="48" width="48"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+         <!-- Tarjeta para proyectos en construcción o privados -->
         <div class="card bg-base-100 w-full h-full shadow-sm flex flex-col">
             <!-- Imagen representativa que indica "en construcción" -->
             <Image
@@ -168,7 +198,6 @@ const props = Astro.props;
                 </a>
             </div>
         </div>
-        
     </div>
 </section>
 
